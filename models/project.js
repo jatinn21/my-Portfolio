@@ -15,6 +15,6 @@ const projectSchema = mongoose.Schema({
   year: {
     type: Number,
     default: 2022,
-},{
-    timestamps:true
+  },
+  timestamps: true,
 });
