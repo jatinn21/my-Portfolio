@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* body {
+  height: 100vh;
+  width: 100%;
+} */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  background-image: radial-gradient(
+    1800px 1100px at center,
+    #0e143d,
+    #000000fc,
+    #111010e2
+  );
+}
+
+nav {
+  padding: 1rem;
+  height: 10rem;
+  width: 100%;
+  /* position: fixed; */
+  position: absolute;
+  top: 0;
+  border-bottom: 0.07rem solid white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.greeting {
+  height: 100%;
+  /* width: auto; */
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  /* justify-content: center; */
+  color: whitesmoke;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: 2%;
+  z-index: 10;
+}
+
+.name {
+  font-size: 2.3rem;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.9s;
+}
+.name:hover {
+  color: #e50050;
+}
+
+.menu {
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  /* width: max-content; */
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.7rem;
+  cursor: pointer;
+  z-index: 6;
+}
+
+.line {
+  cursor: pointer;
+  height: 1rem;
+  min-width: 6rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
+  transition: all 0.3s ease;
+}
+
+.menuTxt {
+  width: 6rem;
+  font-size: 1.8rem;
+  color: gainsboro;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  /* z-index: 7; */
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu:hover .line {
+  background-color: rgb(86, 85, 85);
+  border-top: none;
+  border-bottom: none;
+}
+
+.menu:hover .line,
+.menu:hover .menuTxt {
+  animation-name: bounce;
+  animation-duration: 0.81s;
+  animation-timing-function: ease-in-out;
+}
+
+/* bounce effect on menu button */
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scale(1, 1);
+  }
+  /* 40%, */
+  45% {
+    transform: scale(0.75, 0.65);
+  }
+  60% {
+    transform: scale(1.25, 1.75);
+  }
+  90% {
+    transform: scale(1.15, 0.85);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.body i {
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: all ease 0.3s;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+    background-color: rgb(176, 165, 165);
+  }
+  50% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  75% {
+    opacity: 0;
+    background-color: rgb(176, 165, 165);
+
+    height: calc(height + 10px);
+    width: calc(width + 10px);
+  }
+  90% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  100% {
+    background-color: rgb(176, 165, 165);
+
+    opacity: 0;
+  }
+}
+
+.aboutInfo {
+  border-radius: 2rem;
+  border: 1rem solid rgb(4, 3, 3);
+  height: 100%;
+  width: 60vw;
+  /* color: rgb(0, 0, 0); */
+  font-family: "Poppins", sans-serif;
+  /* background-color: rgb(253, 253, 253); */
+  background-color: hsla(0, 0%, 98%, 1);
+  font-size: 1.9rem;
+  padding: 2rem 1.7rem;
+  z-index: 2;
+  border-radius: 5rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.aboutInfo::-webkit-scrollbar {
+  display: none;
+}
+p.topSideOfInfo,
+p.mainSideOfInfo {
+  width: inherit;
+  height: 6rem;
+  /* background-color: red !important; */
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding-left: 3rem;
+}
+
+p.mainSideOfInfo {
+  height: max-content;
+  width: 97%;
+  display: block;
+  font-size: 2.7rem;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #1d2030;
+  line-height: 5vh;
+  padding-bottom: 3vh;
+}
+
+.homeLink {
+  text-decoration: none;
+  border-bottom: 0.2rem solid #1d2030;
+  transition: all 0.6s;
+
+  color: black;
+}
+
+imp {
+  border-bottom: 0.2rem solid #1d2030;
+}
+
+imp:hover,
+.homeLink:hover {
+  cursor: pointer;
+  transition: all 0.6s;
+  color: #e50050;
+  border-bottom: 0.2rem solid #e50050;
+}
+
+section {
+  /* height: max-content; */
+  height: 85%;
+  width: 100%;
+  position: absolute;
+  /* top: 6rem; */
+  margin-top: 12rem;
+  display: grid;
+  justify-content: center;
+  row-gap: 3rem;
+}
+
+.bottom {
+  /* height: 4rem; */
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  /* margin: 1.3rem 0 1rem 0; */
+  /* margin: 0rem 0 3rem 0; */
+}
+
+.sociallink {
+  position: absolute;
+  /* background-color: yellow; */
+}
+
+.aTagElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.81rem;
+  width: max-content;
+  text-decoration: none;
+  color: gainsboro;
+  font-size: 3vmin;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
+  font-family: proxima-nova, sans-serif;
+
+  font-weight: 900;
+  z-index: 10;
+}
+
+.aTagElement:hover {
+  color: rgb(177, 171, 171);
+  animation-name: bounce;
+  animation-duration: 0.61s;
+  transition: all 0.3s;
+  animation-timing-function: ease;
+}
+
+/* resizing the social icons size */
+.icon {
+  height: 1.7rem;
+  width: 2rem;
+  fill: white;
+}
+
+.aTagElement:hover .icon {
+  fill: rgb(177, 171, 171);
+  transition: all 0.8s 0.5s;
+}
+
+div.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.548);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  display: none;
+}
+
+a.overlay__link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 4rem;
+  font-family: proxima-nova, sans-serif;
+
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+}
+
+a.overlay__link:hover {
+  /* color: rgb(91, 88, 88); */
+  font-weight: 800;
+  animation-name: bounce;
+  animation-duration: 0.71s;
+  animation-timing-function: ease;
+}
+
+a.overlay__link:nth-child(1) {
+  color: rgb(255, 255, 255);
+}

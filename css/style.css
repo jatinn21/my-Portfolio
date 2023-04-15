@@ -1,0 +1,690 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+body {
+  font-size: 62.5%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(
+    1800px 1100px at center,
+    #0e143d,
+    #000000fc,
+    #111010e2
+  );
+}
+
+section#stars i {
+  position: absolute;
+  background-color: rgb(110, 104, 104);
+  border-radius: 50%;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: all ease 0.5s;
+  z-index: 4;
+  /* display: none; */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+    background-color: rgb(176, 165, 165);
+  }
+  50% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  75% {
+    opacity: 0;
+    background-color: rgb(176, 165, 165);
+
+    height: calc(height + 10px);
+    width: calc(width + 10px);
+  }
+  90% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  100% {
+    background-color: rgb(176, 165, 165);
+
+    opacity: 0;
+  }
+}
+
+.top {
+  height: 11%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+
+.menu {
+  margin-right: 3rem;
+  position: absolute;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.line {
+  height: 0.6rem;
+  min-width: 4rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 28.125em) {
+  .line {
+    min-width: 2.5rem;
+    height: 0.3rem;
+  }
+}
+
+.menuTxt {
+  font-size: 1.3rem;
+  color: gainsboro;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu:hover .line {
+  background-color: rgb(86, 85, 85);
+  border-top: none;
+  border-bottom: none;
+}
+
+.menu:hover .line,
+.menu:hover .menuTxt {
+  animation-name: bounce;
+  animation-duration: 0.81s;
+  animation-timing-function: ease-in-out;
+}
+
+/* bounce effect on menu button */
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scale(1, 1);
+  }
+  /* 40%, */
+  45% {
+    transform: scale(0.75, 0.65);
+  }
+  60% {
+    transform: scale(1.25, 1.75);
+  }
+  90% {
+    transform: scale(1.15, 0.85);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.bottom {
+  height: 7rem;
+  width: 100%;
+  /* background-color: red; */
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.social {
+  height: 100%;
+  width: max-content;
+  padding: 3rem;
+  /* background-color: green; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sociallink {
+  position: absolute;
+  /* background-color: yellow; */
+}
+
+.aTagElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.41rem;
+  width: max-content;
+  text-decoration: none;
+  color: gainsboro;
+  font-size: 3vmin;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  z-index: 10;
+}
+
+.aTagElement:hover {
+  color: rgb(177, 171, 171);
+  animation-name: bounce;
+  animation-duration: 0.61s;
+  transition: all 0.3s;
+  animation-timing-function: ease;
+}
+
+/* resizing the social icons size */
+.icon {
+  height: 1.5rem;
+  width: 2rem;
+  fill: white;
+}
+
+.aTagElement:hover .icon {
+  fill: rgb(177, 171, 171);
+  transition: all 0.8s 0.5s;
+}
+
+/* Overlay */
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(38, 41, 38, 0.822);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* z-index: -1; */
+}
+
+.overlay__link {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+  font-family: "Poppins";
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+
+.overlay__link:hover {
+  color: rgb(91, 88, 88);
+  /* border-left: 0.2rem solid grey; */
+  /* border-bottom: 0.2rem solid grey; */
+  /* padding-left: 6rem; */
+  font-weight: 800;
+  animation-name: bounce;
+  animation-duration: 0.71s;
+  /* transition: all 0.1s 0.3s; */
+  animation-timing-function: ease;
+}
+
+/* Avtar creation  */
+.avatar {
+  height: 100vh;
+  width: 100vw;
+  /* font-size: 100% !important; */
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  transition: all 2s;
+  animation-name: spaceFeel;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: backwards; */
+  animation-direction: alternate;
+  cursor: url("../asset/png-clipart-rocket-icon-cartoon-flying-rocket-cartoon-character-cartoons-thumbnail.png"),
+    auto !important;
+}
+
+@keyframes spaceFeel {
+  0% {
+    top: 5rem;
+    left: 0;
+  }
+  25% {
+    rotate: 5deg;
+  }
+  55% {
+    rotate: -5deg;
+  }
+  100% {
+    top: 0rem;
+  }
+}
+
+.helmet {
+  height: 20vmin;
+  width: 20vmin;
+  border-radius: 10vmin 010vmin 2vmin 2vmin;
+  margin-top: -53vmin;
+  border-bottom: 0.4vmin solid rgba(85, 44, 180, 0.781);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+}
+
+.glass {
+  height: 16vmin;
+  width: 18vmin;
+  border-radius: 8vmin;
+  background-color: rgb(22, 19, 19);
+  position: absolute;
+  /* z-index: 9; */
+}
+
+.shine {
+  height: 4vmin;
+  width: 1vmin;
+  /* background-color: white; */
+  position: absolute;
+  /* border-radius: 3vmin; */
+  top: 20%;
+  left: 70%;
+  font-size: 5vmin;
+  color: white;
+  font-weight: bolder;
+  font-stretch: extra-expanded;
+  rotate: -40deg;
+}
+
+.leftEar {
+  height: 5vmin;
+  width: 2.2vmin;
+  background-color: white;
+  position: absolute;
+  margin-left: -21vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1vmin;
+}
+.rightEar {
+  height: 5vmin;
+  width: 2.2vmin;
+  background-color: white;
+  position: absolute;
+  margin-left: 21vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1vmin;
+}
+
+.blackDot {
+  height: 1.2vmin;
+  width: 1.2vmin;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+.purpleDot {
+  height: 1.5vmin;
+  width: 1.5vmin;
+  background-color: rgb(45, 4, 167);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vmin;
+  border-radius: 50%;
+}
+
+.backpack {
+  height: 29vmin;
+  width: 25vmin;
+  background-color: rgb(189, 182, 182);
+  position: absolute;
+  margin-top: -11vmin;
+  border-radius: 3vmin;
+  /* z-index: 1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.chest {
+  height: 8vmin;
+  width: 20vmin;
+  background-color: rgb(255, 255, 255);
+  border: 0.2vmin solid rgba(111, 64, 219, 0.781);
+  border-bottom-width: 0.2vmin;
+  z-index: 3;
+}
+
+.chest2 {
+  height: 6vmin;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.screen {
+  height: 7.5vmin;
+  width: max-content;
+  background-color: rgb(234, 234, 234);
+  border-radius: 1vmin;
+  border: 0.41vmin solid rgb(88, 39, 162);
+  position: absolute;
+  margin-top: -0.3vmin;
+  display: flex;
+  font-size: 1vmin;
+  align-items: center;
+  column-gap: 0.51rem;
+  padding: 0.5vmin 1vmin;
+}
+
+.screen .photo {
+  height: 100%;
+  /* width: 35%; */
+  border-radius: 5rem;
+}
+
+.details {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.chest.chest3 {
+  height: 7vmin;
+  width: 20vmin;
+  border-top: none;
+  border-radius: 0 0 2vmin 2vmin;
+}
+.chest.chest4 {
+  height: 5vmin;
+  width: 20vmin;
+  margin-top: -01vmin;
+  border: 0.2vmin solid rgba(111, 64, 219, 0.781);
+  border-radius: 0vmin 0 2vmin 2vmin;
+}
+
+.leftHand.part1 {
+  height: 13vmin;
+  width: 6vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 1vmin;
+  margin-top: -25.5vmin;
+  margin-left: 21vmin;
+  rotate: -45deg;
+  z-index: 1;
+}
+
+.leftHand.part2 {
+  height: 8vmin;
+  width: 5.94vmin;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1vmin 0vmin 1vmin 1vmin;
+  z-index: 1;
+  margin-top: -12vmin;
+  margin-left: 32vmin;
+  rotate: -30deg;
+}
+
+.leftHand.wist {
+  height: 6vmin;
+  width: 5.6vmin;
+  background-color: rgb(255, 255, 255);
+  margin-top: -3vmin;
+  margin-left: 35vmin;
+  border-radius: 0 0.4vmin 1.8vmin 0.8vmin;
+  position: absolute;
+  z-index: 1;
+}
+
+.leftHand.thumb {
+  height: 2vmin;
+  width: 4vmin;
+  border-radius: 1vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  z-index: 1;
+  margin-top: -5vmin;
+  margin-left: 28.5vmin;
+  rotate: -53deg;
+}
+
+.rightHand.part1 {
+  height: 6vmin;
+  width: 16vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 1vmin;
+  margin-top: -30.5vmin;
+  margin-left: -20vmin;
+  rotate: 30deg;
+  z-index: 1;
+}
+
+.rightHand.part2 {
+  height: 6vmin;
+  width: 9vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 1vmin;
+  margin-top: -39.7vmin;
+  margin-left: -38.8vmin;
+  rotate: 19deg;
+  z-index: 1;
+}
+
+.rightHand.wist {
+  height: 6.077vmin;
+  width: 7vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 1vmin;
+  margin-top: -42.5vmin;
+  margin-left: -50vmin;
+  rotate: 9deg;
+  z-index: 1;
+  border-radius: 1.8vmin 0.5vmin 0 0.8vmin;
+  overflow: hidden;
+}
+
+.rightHand.thumbBottom {
+  height: 4vmin;
+  width: 3.3vmin;
+  background-color: rgba(255, 255, 255);
+  border-radius: 1vmin;
+  margin-top: -1vmin;
+  margin-left: 4vmin;
+  rotate: -19deg;
+  border-radius: 50%;
+}
+
+.rightHand.thumb {
+  height: 5vmin;
+  width: 2.4vmin;
+  border-radius: 35%;
+  position: absolute;
+  background-color: rgba(255, 255, 255);
+  rotate: -5deg;
+  margin-top: -49.5vmin;
+  margin-left: -45.3vmin;
+}
+
+.leftLeg.part1 {
+  height: 7vmin;
+  width: 6vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 5vmin;
+  margin-left: -26vmin;
+}
+.leftLeg.part2 {
+  height: 6.5vmin;
+  width: 6.2vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 13vmin;
+  margin-left: -26.2vmin;
+  overflow: hidden;
+}
+
+.leftLeg.shoeBack {
+  height: 3vmin;
+  width: 3vmin;
+  background-color: rgb(138, 135, 135);
+  border-radius: 50%;
+  margin-top: 72%;
+  margin-left: 72%;
+}
+.leftLeg.p2 {
+  height: 5vmin;
+  width: 6vmin;
+  background-color: rgb(138, 135, 135);
+  margin-top: -70%;
+  margin-left: -2vmin;
+  rotate: 35deg;
+  border-radius: 0 50% 50% 0;
+}
+
+.leftShoe {
+  height: 5vmin;
+  width: 6vmin;
+  background-color: rgb(138, 135, 135);
+  position: absolute;
+  margin-left: -29vmin;
+  margin-top: 14.7vmin;
+  border-radius: 40%;
+}
+
+/* right leg */
+
+.rightLeg.part1 {
+  height: 7vmin;
+  width: 6vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 5vmin;
+  margin-left: -17.5vmin;
+}
+.rightLeg.part2 {
+  height: 6.5vmin;
+  width: 6.2vmin;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 13vmin;
+  margin-left: -17.5vmin;
+  overflow: hidden;
+}
+
+.rightLeg.shoeBack {
+  height: 3vmin;
+  width: 3vmin;
+  background-color: rgb(138, 135, 135);
+  border-radius: 50%;
+  margin-top: 73%;
+  margin-left: -20%;
+}
+.rightLeg.p2 {
+  height: 5vmin;
+  width: 7vmin;
+  background-color: rgb(138, 135, 135);
+  margin-top: -83%;
+  margin-left: 2vmin;
+  rotate: -65deg;
+  border-radius: 50% 50% 50% 0;
+}
+
+.rightShoe {
+  height: 5vmin;
+  width: 6vmin;
+  background-color: rgb(138, 135, 135);
+  position: absolute;
+  margin-left: -14.5vmin;
+  margin-top: 14.5vmin;
+  border-radius: 40%;
+}
+
+.spacestation {
+  height: 30%;
+  width: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topcircle {
+  height: 4vmin;
+  z-index: 4;
+  width: 4vmin;
+  background-color: rgb(95, 13, 13);
+  border-radius: 50%;
+  position: absolute;
+  margin-top: -6vmin;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 3vmin solid transparent;
+  border-right: 3vmin solid transparent;
+  border-bottom: 5vmin solid rgb(255, 0, 0);
+  position: absolute;
+  margin-top: 2vmin;
+}
