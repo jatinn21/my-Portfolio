@@ -98,6 +98,8 @@ Step5 : now connect your app with mongodb Database
 
         then we can connect it with mongodb using mongoose and mongodb ConnectionString
 
+        --------------------------------------------------
+
 Step6 : now go to cluster connect > Drivers > copy the ConnectionString
         in our case :
         mongodb+srv://jatinn21:mongodb123@cluster0.y8lhgt2.mongodb.net/?retryWrites=true&w=majority
@@ -105,12 +107,31 @@ Step6 : now go to cluster connect > Drivers > copy the ConnectionString
         then console.log(if successed)else catch the error and console.log(error)
         [successed]
 
+        --------------------------------------------------
+
+
 Step7 : Now if you want to save the data in the Database , you have to make an model for instance if i want to save info about product, I will create product model so i can save info about product in Database as [product data] and this product data will interact with product model via the connection that we have made before
 
 
         i. create models folder in the project and inside that make a tabledata js file for ex if you are working on a product info then inside the model, you'll make a product.js file
+        [we have taken project.js ]
 
         ii. inside the product.js  bring mongoose package and then create a schema using mongoose.schema and inside the schema, we will determine each field.
-        
+         
         iii. once schema is made, make a product model using mongoose.model(nameOfTheModel,SchemaVariableName)
+        Here the model we have taken is Product.
+        Code: 
+        const Project = mongoose.model('Project',projectSchema)
+
+        iv. once you made the model now export it :
+        Code:
+        module.exports = Project;
+
+        --------------------------------------------------
+
+
+Step8 : build the model and export it using module , you are good to go with saving the data in the Database
+
+        
+
 

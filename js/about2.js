@@ -42,13 +42,15 @@ const menuText = document.querySelector(".menuTxt");
 const parent = document.querySelector("#parent");
 const aboutOverlay = document.querySelector(".overlay");
 const parentInfo = document.getElementsByTagName("section");
+const star = document.getElementsByTagName("i");
 
 // parentInfo.style.filter = "blur(10px)";
 
 const navbar = document.querySelector(".nav");
 
 let numberOfTimesClickOnMenuButton = 0;
-
+let abc = 0;
+let starnumber = star.length;
 menu.addEventListener("click", function () {
   // first time click : open the menu
   if (numberOfTimesClickOnMenuButton == 0) {
@@ -71,6 +73,12 @@ menu.addEventListener("click", function () {
     parent.style.transform = "scale(1.5)";
     parent.style.transition = "all .71s";
 
+    //make the stars invisible
+    for (let i = 0; i < 150; i++) {
+      // star[i].style.display = "none";
+      star[i].classList.add("invisible");
+    }
+
     // hide the menu text
     menuText.style.visibility = "hidden";
 
@@ -91,6 +99,12 @@ menu.addEventListener("click", function () {
     //bring the scroller back for better view to read the content of about page
     document.body.style.overflow = "visible";
 
+    //visible the stars
+    for (let i = 0; i < 150; i++) {
+      star[i].style.transition = "all .5s 1s";
+      // star[i].style.display = "flex";
+      star[i].classList.remove("invisible");
+    }
     // hide the overlay
     aboutOverlay.style.display = "none";
     parent.style.transform = "scale(1)";

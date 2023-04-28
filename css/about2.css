@@ -59,12 +59,22 @@ nav {
 }
 
 .name {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
   font-size: 2.3rem;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: 900;
   cursor: pointer;
+  margin-left: 10%;
   transition: all 0.9s;
+  position: absolute;
+  z-index: 46;
 }
+
 .name:hover {
   color: #e50050;
 }
@@ -117,6 +127,7 @@ nav {
   background-color: rgb(86, 85, 85);
   border-top: none;
   border-bottom: none;
+  transition: all 0.5s;
 }
 
 .menu:hover .line,
@@ -154,6 +165,10 @@ nav {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   transition: all ease 0.3s;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 @keyframes twinkle {

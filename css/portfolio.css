@@ -20,7 +20,7 @@ p {
 }
 
 i {
-  display: none;
+  /* display: none; */
 }
 
 .pageIndex,
@@ -45,23 +45,112 @@ i {
 .filter {
   font-size: 2.5rem;
   font-weight: 600;
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 2rem;
+  width: max-content;
 }
 
 .projects {
   height: 40rem;
   width: 100%;
   margin: 2rem 0;
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.projects span.projectName {
-  height: max-content;
-  width: max-content;
-  color: black;
-  font-size: 2rem;
+.lang {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  z-index: 5;
+  border: 0.5rem solid #000000;
+  border-radius: 1.5rem;
+  font-size: 2rem !important;
   font-weight: 900;
+  padding: 1.5rem 2.5rem;
+  transition: all 0.32s;
+  resize: none;
+  background-color: hsl(0deg 0% 74.8% / 90%);
+  box-shadow: 6px -6px 0px 5px rgb(157, 157, 157) inset,
+    -6px 6px 0px 5px rgb(196, 196, 196) inset;
+  cursor: pointer;
+}
+
+.lang:hover {
+  color: grey;
+  background-color: rgba(255, 255, 255, 0.891);
+  box-shadow: 4px -4px 0px 3px rgb(157, 157, 157) inset;
+}
+
+.lang:focus {
+  outline: none !important;
+}
+
+.projectsContainer {
+  margin-top: 5rem;
+  min-height: 37rem;
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 5rem; */
+  /* background-color: red; */
+  position: absolute;
+  z-index: 5;
+}
+
+.project__card {
+  height: 22rem;
+  width: 30rem;
   background-color: white;
-  padding: 3rem;
+  position: absolute;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.7rem solid black;
+  padding: 1rem;
+  /* z-index: 5; */
+  background-color: hsl(0deg 0% 74.8% / 90%);
+  box-shadow: 6px -6px 0px 5px rgb(157, 157, 157) inset,
+    -6px 6px 0px 5px rgb(196, 196, 196) inset;
+  cursor: pointer;
+}
+
+.project__card:hover {
+  background-color: rgba(255, 255, 255, 0.891);
+  box-shadow: 4px -4px 0px 3px rgb(157, 157, 157) inset;
+}
+
+.project__card:focus {
+  outline: none;
+}
+.top {
+  height: 85%;
+  background-image: url("https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/0f275b1c30123c908cc8491a86d9146a.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.3rem solid black;
+  background-color: hsl(0deg 0% 74.8% / 90%);
+  box-shadow: 6px -6px 0px 5px rgb(157, 157, 157) inset,
+    -6px 6px 0px 5px rgb(196, 196, 196) inset;
+}
+
+.project__card:hover .bottom {
+  color: #e50050;
+  transition: all ease 0.2s;
+}
+
+.bottom {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
 }
