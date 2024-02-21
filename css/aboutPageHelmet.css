@@ -1,0 +1,106 @@
+/* Helmet Icon  starts*/
+.hero {
+  height: max-content;
+  width: 100%;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  overflow: hidden;
+  /* margin-top: 40vmin; */
+  /* z-index: 4; */
+}
+
+/* Helmet Icon Ends */
+.face {
+  height: 20vmin;
+  width: 16.5vmin;
+  background-color: rgb(30, 134, 16);
+  border-radius: 15vmin 15vmin 18vmin 18vmin;
+  border: 0.3vmin solid black;
+  display: flex;
+  position: absolute;
+  transition: all 1s;
+  z-index: 3;
+  /* transform: translate(1vmin, -1vmin); */
+  margin-left: 1.5vmin;
+  /* display: none; */
+}
+
+.face:hover {
+  animation-name: hang;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes hang {
+  0% {
+    opacity: 0.2;
+    transform: rotateY(0deg);
+  }
+  25% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 0.3;
+  }
+
+  70% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+}
+
+.leftEye {
+  height: 7vmin;
+  width: 8vmin;
+  background-color: rgb(9, 9, 9);
+  margin-top: 6vmin;
+  border-radius: 2vmin 15vmin;
+}
+.rightEye {
+  height: 7vmin;
+  width: 8vmin;
+  background-color: rgb(9, 9, 9);
+  margin-top: 6vmin;
+  margin-left: 1vmin;
+  border-radius: 2vmin 15vmin;
+  transform: scaleX(-1);
+}
+
+.mouth {
+  height: 3vmin;
+  width: 4vmin;
+  background-color: red;
+  position: absolute;
+  margin-top: 15vmin;
+  margin-left: 5.9vmin;
+  border-radius: 0vmin 0vmin 15vmin 15vmin;
+  border: 0.3vmin solid black;
+}
+
+.teeth {
+  height: 1vmin;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0vmin 0vmin 15vmin 15vmin;
+}
+
+.neck {
+  height: 2vmin;
+  width: 4vmin;
+  background-color: green;
+  position: absolute;
+  margin-top: 19vmin;
+  margin-left: 6vmin;
+  z-index: 1;
+  border: 0.3vmin solid black;
+  border-bottom: none;
+  border-top: none;
+}

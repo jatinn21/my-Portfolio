@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApnaCollege Page</title>
+    <link rel="stylesheet" href="../css/apnaCollege.css">
+</head>
+
+<body class="body">
+    <nav>
+        <div class="left greeting"><span class="name"></span></div>
+        <div class="right menu">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="menuTxt">Menu</span>
+        </div>
+    </nav>
+    <section id="parent">
+        <div class="title">
+            <p>
+                ApnaCollege, An E-Learning System
+            </p>
+        </div>
+        <div class="project__image__carasoul">
+            <span class="left_side_arrow side_button"> &lsaquo;
+            </span>
+            <div class="image__parent">
+                <span class="project__image_container">
+                </span>
+            </div>
+            <span class="right_side_arrow side_button">
+                &rsaquo;
+            </span>
+        </div>
+        <div class="pageIndex">
+            <div class="aboutProject">
+                <span>
+                    <a href="index.html">Home</a><small> > </small><a href="../html/portfolio.html">Portfolio</a><small>
+                        >
+                    </small>ApnaCollege
+                </span>
+                <p class="point">
+                    ApnaCollege is an <span class="highlight normal">e-learning system</span> that was built as a final
+                    year
+                    project for BCA in 2022. It is a
+                    full-stack system that was designed and developed using HTML, CSS, JS, PHP, and MySQL. The project
+                    was
+                    created with a lot of passion and dedication, which earned the creator an <span
+                        class="highlight normal">
+                        impressive score of 84%
+                    </span> on
+                    their final year.
+                </p>
+                <p class="point">The system offers a range of features for students, including the ability to register,
+                    purchase
+                    courses, change their profile picture/password because let's be real, we all love a good profile pic
+                    change. Students can also provide feedback on the courses they have taken.
+                    Students can explore a range of courses and purchase them with ease, thanks to the brilliant
+                    integration of Razorpay as the payment gateway.
+                    They can also view the courses provided by the admin and see the feedback given by other students
+                    before making a purchase.</p>
+                <p class="point"> And, if you're wondering who's the
+                    boss here, it's the admin, of course! The admin has the power to add/delete students and courses,
+                    view lessons within each course, and even delete them if necessary. Although ApnaCollege is not
+                    currently live, it remains a testament to my skills and dedication as a developer.</p>
+                <p class="year"> <b>Year:</b> 2022</p>
+            </div>
+        </div>
+
+        <!-- <div class="bottom">
+            <span class="sociallink link1">
+                <a class="aTagElement" href="https://github.com/jatinn21" target="_blank">
+                    <svg class="icon">
+                        <use xlink:href="../asset/social_Icons.svg#icon-github"></use>
+                    </svg> Github
+                </a>
+            </span>
+            <span class="sociallink link2">
+                <a class="aTagElement" href="https://www.linkedin.com/in/aboutjatin/" target="_blank">
+                    <svg class="icon">
+                        <use xlink:href="../asset/social_Icons.svg#icon-linkedin2"></use>
+                    </svg> Linkedln
+                </a>
+            </span>
+            <span class="sociallink link3">
+                <a class="aTagElement" href="https://www.instagram.com/_jatinn_.21/" target="_blank">
+                    <svg class="icon">
+                        <use xlink:href="../asset/social_Icons.svg#icon-instagram"></use>
+                    </svg> Instagram
+                </a>
+            </span>
+            <span class="sociallink link4">
+                <a class="aTagElement" href="https://twitter.com/_Jatinn_21" target="_blank">
+                    <svg class="icon">
+                        <use xlink:href="../asset/social_Icons.svg#icon-twitter"></use>
+                    </svg> Twitter
+                </a>
+            </span>
+        </div> -->
+    </section>
+    <!-- overlay Starts -->
+    <div class="overlay">
+        <a href="index.html" class="overlay__link">Home</a>
+        <a href="about2.html" class="overlay__link">About</a>
+        <a href="contact.html" class="overlay__link">Contact</a>
+    </div>
+    <!-- overlay ends -->
+
+</body>
+<script src="../js/portfolio.js"></script>
+<script>
+    const a = document.querySelectorAll('.side_button');
+    a.forEach(e => e.addEventListener('click', function () {
+        const randomImage = Math.trunc(Math.random() * 8 + 1);
+        document.querySelector(
+            ".project__image_container"
+        ).style.backgroundImage = `url(../asset/projectImg/AC${randomImage}.png)`;
+
+    }))
+
+</script>
+
+</html>

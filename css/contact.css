@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+.stars {
+  min-height: 100vh;
+  width: 100%;
+  background-image: radial-gradient(
+    1800px 1100px at center,
+    #0e143d,
+    #000000fc,
+    #111010e2
+  );
+  overflow: hidden;
+}
+
+.stars i {
+  position: absolute;
+  background-color: rgb(110, 104, 104);
+  border-radius: 50%;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: all ease 0.3s;
+  z-index: 4;
+  /* display: none; */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+    background-color: rgb(176, 165, 165);
+  }
+  50% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  75% {
+    opacity: 0;
+    background-color: rgb(176, 165, 165);
+
+    height: calc(height + 10px);
+    width: calc(width + 10px);
+  }
+  90% {
+    opacity: 1;
+    background-color: rgb(110, 104, 104);
+  }
+  100% {
+    background-color: rgb(176, 165, 165);
+
+    opacity: 0;
+  }
+}
+
+/* nav bar start */
+header.nav {
+  height: 10rem;
+  width: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  z-index: 10 !important;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right,
+.left {
+  height: 100%;
+  width: max-content;
+  margin: 0 10rem 0 3rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  font-weight: 600;
+}
+
+.greeting:hover {
+  cursor: pointer;
+  color: #e50050;
+}
+
+.menu {
+  width: max-content;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.7rem;
+  cursor: pointer;
+}
+
+.line {
+  cursor: pointer;
+  height: 1rem;
+  min-width: 6rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
+  transition: all 0.3s ease;
+}
+
+.menuTxt {
+  width: 6rem;
+  font-size: 1.8rem;
+  color: gainsboro;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu:hover .line {
+  background-color: rgb(86, 85, 85);
+  border-top: none;
+  border-bottom: none;
+}
+
+.menu:hover .line,
+.menu:hover .menuTxt {
+  animation-name: bounce;
+  animation-duration: 0.81s;
+  animation-timing-function: ease-in-out;
+}
+
+/* bounce effect on menu button */
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scale(1, 1);
+  }
+  /* 40%, */
+  45% {
+    transform: scale(0.75, 0.65);
+  }
+  60% {
+    transform: scale(1.25, 1.75);
+  }
+  90% {
+    transform: scale(1.15, 0.85);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+/* nav bar end */
+
+.container {
+  position: absolute;
+  /* top: 0%; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.form {
+  height: 60rem;
+  width: 60%;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactHeader {
+  width: 40rem;
+  color: gainsboro !important;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 2rem;
+  font-weight: 800;
+  border-bottom: 2px dotted rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+}
+
+.dots {
+  height: max-content;
+  width: max-content;
+  /* font-size: 2rem; */
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-bottom: 0.52rem;
+}
+
+.dot {
+  height: 0.61rem;
+  width: 0.61rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.input {
+  /* 
+  box-shadow: inset 6px -6px 0 1px rgb(9 10 15 / 30%),
+  inset -6px 6px 0 1px hsl(0deg 0% 98% / 50%);
+  transition: background 0.1s, box-shadow 0.1s;
+  outline: none;
+  */
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  min-width: 40rem;
+  /* max-width: 300px; */
+  z-index: 5;
+  border: 0.5rem solid #000000;
+  border-radius: 1.5rem;
+  font-size: 2rem !important;
+  font-weight: 900;
+  padding: 1.5rem 1.5rem 2rem;
+  transition: all 0.32s;
+  resize: none;
+  background-color: hsl(0deg 0% 74.8% / 90%);
+  box-shadow: 6px -6px 0px 5px rgb(157, 157, 157) inset,
+    -6px 6px 0px 5px rgb(196, 196, 196) inset;
+  /*Properties of box shadow : h-offset v-offset blur spread color inset|inherit|initial */
+}
+
+.input:last-child {
+  min-width: 15rem;
+  cursor: pointer;
+}
+
+.input:hover {
+  background-color: rgba(255, 255, 255, 0.891);
+  box-shadow: 4px -4px 0px 3px rgb(157, 157, 157) inset;
+}
+
+.input:focus {
+  outline: none !important;
+}
+
+.bottom {
+  height: 7rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.social {
+  height: 100%;
+  width: max-content;
+  padding: 3rem;
+  /* background-color: green; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sociallink {
+  position: absolute;
+  /* background-color: yellow; */
+}
+
+.aTagElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.41rem;
+  width: max-content;
+  text-decoration: none;
+  color: gainsboro;
+  font-size: 3vmin;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  z-index: 10;
+}
+
+.aTagElement:hover {
+  color: rgb(177, 171, 171);
+  animation-name: bounce;
+  animation-duration: 0.61s;
+  transition: all 0.3s;
+  animation-timing-function: ease;
+}
+
+/* resizing the social icons size */
+.icon {
+  height: 1.5rem;
+  width: 2rem;
+  fill: white;
+}
+
+.aTagElement:hover .icon {
+  fill: rgb(177, 171, 171);
+  transition: all 0.8s 0.5s;
+}
+
+/* Overlay */
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(38, 41, 38, 0.822);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  font-family: "Poppins", sans-serif;
+
+  /* z-index: -1; */
+}
+
+.overlay__link {
+  color: white;
+  text-decoration: none;
+  font-size: 4rem;
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+
+.overlay__link:hover {
+  color: rgb(91, 88, 88);
+  /* border-left: 0.2rem solid grey; */
+  /* border-bottom: 0.2rem solid grey; */
+  /* padding-left: 6rem; */
+  font-weight: 800;
+  animation-name: bounce;
+  animation-duration: 0.71s;
+  /* transition: all 0.1s 0.3s; */
+  animation-timing-function: ease;
+}
+
+/* making the form responsive */
+@media (max-width: 37.5em) {
+  .line {
+    height: 0.71rem;
+    min-width: 5rem;
+  }
+  .menuTxt {
+    width: 5rem;
+    font-size: 1.3rem;
+  }
+  .input {
+    min-width: 30rem;
+    z-index: 5;
+    border: 0.3rem solid #000000;
+    border-radius: 1.5rem;
+    font-size: 1.32rem !important;
+  }
+  .overlay {
+    row-gap: 4rem;
+  }
+  .overlay__link {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .menu {
+    margin-right: 3rem !important;
+  }
+}
+
+@media (max-width: 21.25em) {
+  .greeting {
+    font-size: 1rem;
+  }
+  .menu {
+    margin-right: 1rem !important;
+  }
+  .line {
+    height: 0.61rem;
+    min-width: 4.5rem;
+  }
+  .menuTxt {
+    width: 4.5rem;
+    font-size: 1.1rem;
+  }
+  .input {
+    min-width: 25rem;
+  }
+}
+
+@media (max-width: 28.375em) {
+  .right,
+  .left {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 20em) {
+  .left {
+    display: none !important;
+    /* font-size: 1.2rem !important; */
+  }
+  .overlay__link {
+    font-size: 3rem;
+  }
+  .overlay {
+    row-gap: 3rem;
+  }
+}
