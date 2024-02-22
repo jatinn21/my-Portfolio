@@ -26,7 +26,6 @@ function stars() {
     star.style.borderRadius = "50%";
 
     stars.appendChild(star);
-    // star.style.zIndex = "1";
 
     i++;
   }
@@ -93,6 +92,8 @@ menu.addEventListener("click", function () {
     line2.style.animationDuration = "0.61s";
     // body.style.transform = "scale(1)";
 
+    document.querySelector("nav").style.zIndex = "10000";
+
     // show the menu text
     menuText.style.visibility = "visible";
 
@@ -105,11 +106,12 @@ menu.addEventListener("click", function () {
       // star[i].style.display = "flex";
       star[i].classList.remove("invisible");
     }
+
     // hide the overlay
     aboutOverlay.style.display = "none";
     parent.style.transform = "scale(1)";
     parent.style.transition = "all .71s";
-
+    document.querySelector("#parent").style.zIndex = "5";
     parent.style.filter = "blur(0px)";
 
     numberOfTimesClickOnMenuButton--;
